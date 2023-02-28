@@ -1,0 +1,62 @@
+#contenido {
+  height: 100%;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.609);
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.comenzar{
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: 1s ease-in-out 0s 1 appear;
+}
+
+.comenzar > img {
+  width: 600px;
+}
+
+.btn {
+  font-size: 30px;
+  background-color: transparent;
+  color: #f7901e;
+}
+
+.btn:hover {
+  color: #ed1c24;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    top: -10%;
+  }
+
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
+
