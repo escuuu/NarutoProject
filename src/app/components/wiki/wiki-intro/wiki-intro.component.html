@@ -1,0 +1,15 @@
+<div id="contenido">
+  <div class="titulo font" style="text-align: center;">
+    <span>OBTENGA INFORMACIÓN SOBRE TODOS LOS PERSONAJES RELACIONADOS CON EL UNIVERSO DE NARUTO...</span>
+  </div>
+
+  <div class="contenido-bloques g1">
+    <div class="separador_small b1"></div>
+    <img src="https://freight.cargo.site/w/1080/i/e995cdbeeaf928355de6243e6ec309e640589e2f8b2e5cbe0e7f4bc4f0284a2a/naruto_walk_GIF.gif" width="120px">
+    <div class="separador_small b1"></div>
+  </div>
+
+  <div class="contenido-bloques">
+    <app-wiki-listado *ngFor="let personaje of listadoPersonajes" [personaje]="personaje"></app-wiki-listado>
+  </div>
+</div>

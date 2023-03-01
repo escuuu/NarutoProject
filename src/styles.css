@@ -1,8 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: 'Naruto Font';
   src: url('assets/fonts/StretchPro.otf');
 }
+
+.titulo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.separador_small {
+  background-image: linear-gradient(120deg, #F7901E 0%, #ed1c24 100%);
+  height: 2px;
+  margin: 2% 0;
+}
+
+.contenido-bloques {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+}
+
+
+/* CLASES GENERALES PARA BOTONES */
 
 .font {
   font-family: 'Naruto Font';
@@ -49,6 +70,7 @@
 .btn-efecto:hover a {
 	letter-spacing: 3px;
   color: white;
+  cursor: pointer;
 }
 
 .btn-efecto a::before {
