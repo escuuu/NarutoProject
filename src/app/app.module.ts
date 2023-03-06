@@ -12,6 +12,8 @@ import { ClanesComponent } from './components/clanes/clanes.component';
 import { WikiIntroComponent } from './components/wiki/wiki-intro/wiki-intro.component';
 import { WikiListadoComponent } from './components/wiki/wiki-listado/wiki-listado.component';
 import { WikiVerMasComponent } from './components/wiki/wiki-ver-mas/wiki-ver-mas.component';
+import { VillasIntroComponent } from './components/villas/villas-intro/villas-intro.component';
+import { VillasListadoComponent } from './components/villas/villas-listado/villas-listado.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { WikiVerMasComponent } from './components/wiki/wiki-ver-mas/wiki-ver-mas
     ClanesComponent,
     WikiIntroComponent,
     WikiListadoComponent,
-    WikiVerMasComponent
+    WikiVerMasComponent,
+    VillasIntroComponent,
+    VillasListadoComponent
   ],
   imports: [
     BrowserModule,

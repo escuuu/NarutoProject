@@ -5,4 +5,5 @@ export interface Villas {
   nacion: string;
   kage: string;
   descripcion: string;
+  imagen?: string;
 }

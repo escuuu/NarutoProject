@@ -23,6 +23,10 @@
 }
 
 
+.carousel-control-next, .carousel-control-prev {
+  width: 5% !important;
+}
+
 /* CLASES GENERALES PARA BOTONES */
 
 .font {
