@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<ngb-carousel #carousel [showNavigationIndicators]="false" [interval]="0" [activeId]="activeId">
+	<ng-template ngbSlide *ngFor="let villa of listaVillas; let i = index" id="{{i}}">
+    <div id="contenido">
+      <div class="b1 font">
+        <h1>{{villa.nombre}}</h1><br>
+        <br>
+        <div class="separador_small"></div>
+        <br>
+        <p>{{villa.descripcion}}</p><br>
+        <div class="separador_small"></div><br>
+        <p>Fundador: {{villa.fundador}}</p>
+        <p>Nación: {{villa.nacion}}</p>
+      </div>
+
+      <div class="b2">
+        <img  src="{{villa.imagen}}" class="img">
+      </div>
+    </div>
+	</ng-template>
+</ngb-carousel>

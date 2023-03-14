@@ -3,4 +3,5 @@ export interface Clanes {
   nombre: string;
   descripcion: string;
   habilidades: string;
+  imagen: string;
 }

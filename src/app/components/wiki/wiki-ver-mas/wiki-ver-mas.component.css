@@ -3,7 +3,7 @@
   background-image: url(https://wallpaper.dog/large/20423563.jpg);
   background-position: -10%;
   object-fit: cover;
-  min-height: 90.7vh;
+  min-height: 90.5999999vh;
 }
 
 .b1 {
@@ -33,7 +33,7 @@
   position: relative;
   top: 0;
   width: 40%;
-  animation: 1s ease-in-out 0s 1 b2_appear;
+  animation: 2s ease-in 0s 1 b2_appear;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -74,7 +74,7 @@
   }
 
   100% {
-    right: 0%;
+    top: 0%;
   }
 
 

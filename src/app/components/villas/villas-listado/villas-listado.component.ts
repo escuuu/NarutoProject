@@ -29,6 +29,6 @@ export class VillasListadoComponent {
 
   seeMore(): void {
     VillasListadoComponent.villa_seeMore = this.villa;
-    this.router.navigate(['/wiki', this.villa.nombre]);
+    this.router.navigate(['/villas', this.villa.nombre]);
   }
 }

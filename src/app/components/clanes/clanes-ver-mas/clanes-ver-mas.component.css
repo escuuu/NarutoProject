@@ -1,0 +1,75 @@
+#contenido {
+  display: flex;
+  background-image: url(https://wallpaper.dog/large/20423563.jpg);
+  background-position: -10%;
+  object-fit: cover;
+  min-height: 90.5999999vh;
+}
+
+.b1 {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(54,54,54,1) 62%, rgba(29,29,29,1) 100%);
+  position: relative;
+  left: 0;
+  width: 60%;
+  padding: 2% 5%;
+  color: white;
+  animation: 2s ease-in-out 0s 1 b1_appear;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.b1 > h1 {
+  font-size: 90px;
+}
+
+.b1 > p {
+  font-weight: 300;
+  font-size: 15px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+
+.b2 {
+  position: relative;
+  top: 0;
+  width: 40%;
+  animation: 2s ease-in 0s 1 b2_appear;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position:50%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 5% !important;
+  color: #000;
+}
+
+@keyframes b1_appear {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+
+
+}
+
+@keyframes b2_appear {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0%;
+  }
+
+
+}
+

@@ -9,6 +9,7 @@ import { Villas } from 'src/app/shared/interfaces/villas';
 export class VillasIntroComponent implements OnInit{
 
   listaVillas!: Villas[]
+  static listaEstatica: Villas[]
 
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class VillasIntroComponent implements OnInit{
       nacion: "País del Agua",
       kage: "Mizukage",
       descripcion: "Kirigakure (霧隠れの里, Kirigakure no sato, que significa literalmente 'Aldea Oculta de la Niebla'), también conocida como la Aldea de la Niebla Sangrienta (血霧の里, Chigiri no Sato) es una aldea ninja que se encuentra en el País del Agua. Al ser una de las grandes aldeas shinobi, tiene un Kage, que es el líder de la aldea conocido con el titulo de Mizukage, hasta ahora han sido seis, el más reciente es Chōjūrō. Los shinobis de esta aldea son muy hábiles en el uso de técnicas de Elemento Agua.",
-      imagen: "https://static.wikia.nocookie.net/naruto/images/1/17/Kirigakure_Actualidad_Anime.png"
+      imagen: "assets/Kirigakure.png"
     },
     {
       id_villa: 3,
@@ -53,6 +54,8 @@ export class VillasIntroComponent implements OnInit{
       imagen: "assets/Aldea_Oculta_de_la_Roca.png"
     },
   ]
+
+  VillasIntroComponent.listaEstatica = this.listaVillas;
 }
 
 }
