@@ -4,4 +4,5 @@ export class User {
   apellidos!: string;
   nick!: string;
   password!: string;
+  gmail!: string;
 }

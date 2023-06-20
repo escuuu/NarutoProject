@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/classes/user';
 import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
@@ -20,27 +21,27 @@ export class LoginComponent implements OnInit {
 
   private CrearForm(): void {
     this.login_form = new UntypedFormGroup({
-      email: new UntypedFormControl('', Validators.required),
+      gmail: new UntypedFormControl('', Validators.required),
       password: new UntypedFormControl('', Validators.required)
     });
   }
 
   login = () => {
-    var email = this.login_form.value.email;
+    var gmail = this.login_form.value.gmail;
     var password = this.login_form.value.password;
 
-    this.api.login(email, password).subscribe(
-      (logueo: any) => {
+    this.api.login(gmail, password).subscribe(
+      (logueo: User) => {
         console.log(logueo);
+        const token = password+gmail;
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(logueo));
+        this.router.navigate(['/wiki']);
       },
-      () => {
-        alert('La BBDD no funciona');
+      (error) => {
+        alert(error.error.message);
       }
     );
 
-    const token = '1234';
-    localStorage.setItem('token', token);
-
-    this.router.navigate(['/wiki']);
   }
 }

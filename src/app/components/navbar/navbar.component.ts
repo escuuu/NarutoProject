@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/classes/user';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   token: any = localStorage.getItem('token');
-
+  usuario:User|any = localStorage.getItem('user');
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.token);
-  }
 
+    this.usuario = JSON.parse(this.usuario);
+
+  }
 
   eliminarSesion(): void{
     localStorage.clear();

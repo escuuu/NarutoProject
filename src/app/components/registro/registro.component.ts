@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/classes/user';
 import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
@@ -12,8 +13,11 @@ export class RegistroComponent implements OnInit {
 
   fieldTextType!: boolean;
   public registro_form!: UntypedFormGroup;
+  usuario: User;
 
-  constructor(private router: Router, private api: ApiService) {}
+  constructor(private router: Router, private api: ApiService) {
+    this.usuario = new User;
+  }
 
   ngOnInit(): void {
     this.crearForm();
@@ -24,7 +28,7 @@ export class RegistroComponent implements OnInit {
       nombre: new UntypedFormControl('', Validators.required),
       apellidos: new UntypedFormControl('', Validators.required),
       nick: new UntypedFormControl('', Validators.required),
-      email: new UntypedFormControl('' , [Validators.required, Validators.email]),
+      gmail: new UntypedFormControl('' , [Validators.required, Validators.email]),
       password: new UntypedFormControl('', [Validators.required, Validators.minLength(8)])
     });
   }
@@ -45,8 +49,8 @@ export class RegistroComponent implements OnInit {
     return this.registro_form.get('nick');
   }
 
-  get email(): any {
-    return this.registro_form.get('email');
+  get gmail(): any {
+    return this.registro_form.get('gmail');
   }
 
   get password(): any {
@@ -55,17 +59,19 @@ export class RegistroComponent implements OnInit {
 
   registrar(): void {
     const formData = this.registro_form.value;
+    this.usuario = formData;
 
-    console.log(formData);
+    console.log(this.usuario);
 
-    // this.api.registro(formData.nombre, formData.apellidos, formData.nick, formData.email, formData.password).subscribe(
-    //   (registro: any) => {
-    //     console.log(registro);
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
+    
+    this.api.registro(this.usuario).subscribe(
+      (registro: User) => {
+        console.log(registro);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 
     
     this.router.navigate(['/login']);

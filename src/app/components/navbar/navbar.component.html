@@ -45,7 +45,7 @@
           <div class="btn-efecto"><button routerLink="/clanes">CLANES</button></div>
         </li>
         <li class="nav-item dropdown-center">
-          <a class="btn-nav btn-outline-success dropdown-toggle nav-link" data-bs-toggle="dropdown"> <i class="bi bi-person-circle"></i> Usuario</a>
+          <a class="btn-nav btn-outline-success dropdown-toggle nav-link" data-bs-toggle="dropdown"> <i class="bi bi-person-circle"></i> {{ usuario?.nick }}</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item btn-nav" (click)="eliminarSesion()"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
           </ul>

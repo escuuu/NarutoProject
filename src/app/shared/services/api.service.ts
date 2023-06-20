@@ -2,6 +2,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { User } from '../classes/user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class ApiService {
 
   login(user: string, password: string): Observable<any> {
 
-    const logueo = this.http.get<any>(`${this.api_url}login?nick=`+ user + '&pass=' + password);
+    const logueo = this.http.get<any>(`${this.api_url}login?gmail=`+ user + '&pass=' + password);
 
     // const token: string = '1234';
     // if(token) {
@@ -26,10 +28,9 @@ export class ApiService {
     return logueo;
   }
 
-  registro(nombre: string, apellidos: string, nick: string, email: string, password: string): Observable<any> {
+  registro(usuario: User): Observable<User> {
 
-    const new_user = {nombre, apellidos, nick, email, password};
-    const registro = this.http.post<any>(`${this.api_url}register`, new_user);
+    const registro = this.http.post<User>(`${this.api_url}register`, usuario);
 
     return registro;
   }

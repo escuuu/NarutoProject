@@ -35,12 +35,12 @@
 
             <div class="col-md-5 offset-md-4">
               <div class="form">
-                <div *ngIf="email.invalid && email.touched">
-                  <div *ngIf="email.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
-                  <div *ngIf="password.errors?.email" class="d-block invalid-feedback">Correo no válido.</div>
+                <div *ngIf="gmail.invalid && gmail.touched">
+                  <div *ngIf="gmail.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+                  <div *ngIf="password.errors?.gmail" class="d-block invalid-feedback">Correo no válido.</div>
                 </div>
-                <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" formControlName="email" [class.is-invalid]="email.touched && email.invalid" class="form-control font1"/>
+                <label class="form-label" for="gmail">gmail</label>
+                <input type="gmail" id="gmail" formControlName="gmail" [class.is-invalid]="gmail.touched && gmail.invalid" class="form-control font1"/>
               </div>
             </div>
 
