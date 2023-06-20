@@ -10,6 +10,8 @@ export class WikiIntroComponent implements OnInit{
   listadoPersonajes: Personajes[] = [];
   static listaEstatica: Personajes[]
 
+  token: any = localStorage.getItem('token');
+
   constructor() {}
 
   ngOnInit(): void {

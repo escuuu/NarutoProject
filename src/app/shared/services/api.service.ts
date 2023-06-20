@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  api_url: string = 'http://localhost:8080';
+  api_url: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
 
   login(user: string, password: string): Observable<any> {
 
-    const logueo = this.http.post<any>(`${this.api_url}/login`, {user, password});
+    const logueo = this.http.get<any>(`${this.api_url}login?nick=`+ user + '&pass=' + password);
 
     // const token: string = '1234';
     // if(token) {
@@ -29,7 +29,7 @@ export class ApiService {
   registro(nombre: string, apellidos: string, nick: string, email: string, password: string): Observable<any> {
 
     const new_user = {nombre, apellidos, nick, email, password};
-    const registro = this.http.post<any>(`${this.api_url}/register`, {new_user});
+    const registro = this.http.post<any>(`${this.api_url}register`, new_user);
 
     return registro;
   }

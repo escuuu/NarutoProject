@@ -9,7 +9,8 @@ import { Clanes } from 'src/app/shared/interfaces/clanes';
 export class ClanesIntroComponent implements OnInit{
 
   listaClanes!: Clanes[]
-  static listaEstatica: Clanes[]
+  static listaEstatica: Clanes[];
+  token: any = localStorage.getItem('token');
 
 
   ngOnInit(): void {

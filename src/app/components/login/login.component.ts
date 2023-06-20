@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
       }
     );
 
-    // const token = '1234';
-    // localStorage.setItem('token', token);
+    const token = '1234';
+    localStorage.setItem('token', token);
 
-    // this.router.navigate(['/wiki']);
+    this.router.navigate(['/wiki']);
   }
 }

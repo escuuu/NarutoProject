@@ -56,12 +56,19 @@ export class RegistroComponent implements OnInit {
   registrar(): void {
     const formData = this.registro_form.value;
 
-    this.api.registro(formData.nombre, formData.apellidos, formData.nick, formData.email, formData.password).subscribe(
-      (registro: any) => {
-        console.log(registro);
-      }
-    )
-    // this.router.navigate(['/login']);
+    console.log(formData);
+
+    // this.api.registro(formData.nombre, formData.apellidos, formData.nick, formData.email, formData.password).subscribe(
+    //   (registro: any) => {
+    //     console.log(registro);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
+
+    
+    this.router.navigate(['/login']);
   }
 
 }

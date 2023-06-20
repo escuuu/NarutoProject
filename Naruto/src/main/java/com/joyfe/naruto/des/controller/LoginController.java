@@ -18,6 +18,7 @@ import com.joyfe.naruto.des.execption.NotFound;
 import com.joyfe.naruto.des.execption.NullPoint;
 import com.joyfe.naruto.des.service.LoginService;
 
+import jakarta.annotation.security.PermitAll;
 import jakarta.validation.Valid;
 
 @RestController	
@@ -36,44 +37,45 @@ public class LoginController {
 	private JavaMailSender sendmail;
 	
 	@PostMapping(path = "/register")
-	@CrossOrigin(origins = "http://localhost:" + port)
-	public ResponseEntity<Usuarios> registrarUsuario(@Valid @RequestBody Usuarios user ) throws NullPoint{
-		
-		SimpleMailMessage mail = new SimpleMailMessage();
-		
-		if(user.getGmail().contains("@") && user.getGmail().contains(".com") || user.getGmail().contains(".es")) {
-			
-			if(ls.verificar(user.getNick(), user.getGmail())) {
-				
-				Usuarios newuser = new Usuarios(user.getNombre(), user.getApellidos(), user.getNick(), user.getPassword(), user.getGmail());
-				
-				ls.registarUsuario(newuser);
-				
-				try 
-				{
-					mail.setTo(user.getGmail());
-					mail.setSubject("Hola bienvenido " + user.getNombre() + " " + user.getApellidos());
-					mail.setText("Te damos la bienvenida a nuestra API de Naruto, espero que la disfrutes. Te has registrado con el nick: " + user.getNick());
-					sendmail.send(mail);
-				}
-				catch (Exception e) {
-					
-					throw new NotFound("No se ha encontrado dicho email o " + e);
-				}
-			
-				return ResponseEntity.ok(newuser);
-			}
-		
-			else {
-				
-				throw new NullPoint("Nick o gmail ya registrado");
-			}
-		}
-		else {
-			
-			throw new NullPoint("El gmail debe ser válido");
-		}
-	}
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<?> registrarUsuario(@Valid @RequestBody Usuarios user ) throws NullPoint{
+
+        SimpleMailMessage mail = new SimpleMailMessage();
+
+        if(user.getGmail().contains("@") && user.getGmail().contains(".com") || user.getGmail().contains(".es")) {
+
+            if(ls.verificar(user.getNick(), user.getGmail())) {
+
+                Usuarios newuser = new Usuarios(user.getNombre(), user.getApellidos(), user.getNick(), user.getPassword(), user.getGmail());
+
+
+
+                try 
+                {
+                    mail.setTo(user.getGmail());
+                    mail.setSubject("Hola bienvenido " + user.getNombre() + " " + user.getApellidos());
+                    mail.setText("Te damos la bienvenida a nuestra API de Naruto, espero que la disfrutes. Te has registrado con el nick: " + user.getNick());
+                    sendmail.send(mail);
+                }
+                catch (Exception e) {
+
+                    return ResponseEntity.badRequest().body("Mail no válido");
+                }
+
+                ls.registarUsuario(newuser);
+                return ResponseEntity.ok(newuser);
+            }
+
+            else {
+
+                return ResponseEntity.badRequest().body("Nick o gmail ya registrado");
+            }
+        }
+        else {
+
+            return ResponseEntity.badRequest().body("El gmail debe ser válido");
+        }
+    }
 	
 	
 	@GetMapping(path = "/login", consumes = { MediaType.ALL_VALUE })

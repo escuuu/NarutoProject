@@ -11,6 +11,8 @@ export class VillasIntroComponent implements OnInit{
   listaVillas!: Villas[]
   static listaEstatica: Villas[]
 
+  token: any = localStorage.getItem('token');
+
 
   ngOnInit(): void {
     this.generateVillas();
