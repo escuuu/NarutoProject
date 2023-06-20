@@ -1,0 +1,46 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#contenido {
+  width: 100%;
+  min-height: 90%;
+}
+
+.contenido-centrado {
+  background-image: url(../../../assets/login/blob-haikei.svg);
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: -1px -91px 74px -63px rgba(0,0,0,1) inset;
+  -webkit-box-shadow: -1px -91px 74px -63px rgba(0,0,0,1) inset;
+  -moz-box-shadow: -1px -91px 74px -63px rgba(0,0,0,1) inset; */
+  position: -webkit-sticky;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  font-size: 20px;
+  color: #fff;
+}
+
+.contenido-bloques {
+  display: flex;
+  justify-content: center;
+}
+
+#password{ margin-bottom: 3%;}
+
+.btn-efecto {
+  margin: 10px;
+}

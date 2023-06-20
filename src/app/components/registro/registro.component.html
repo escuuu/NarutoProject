@@ -1,0 +1,74 @@
+<main id="contenido font" style="overflow: clip !important;">
+  <div class="contenido-centrado font" >
+    <div class="kate-explicacion font">
+      <section>
+        <a  href="#">
+          <img src="../../../assets/naruto.png" width="280px">
+        </a>
+
+        <form class="container font" (ngSubmit)="registrar()"  [formGroup]="registro_form">
+          <div class="row gy-2">
+
+            <div class="col-md-5 offset-md-3">
+              <div *ngIf="nombre.invalid && nombre.touched">
+                <div *ngIf="nombre.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+              </div>
+              <label for="nombre" class="col-form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Fernandito">
+            </div>
+
+            <div class="col-md-5 offset-md-4">
+              <div *ngIf="apellidos.invalid && apellidos.touched">
+                <div *ngIf="apellidos.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+              </div>
+              <label for="apellidos" class="col-form-label">Apellidos</label>
+              <input type="text" class="form-control" formControlName="apellidos" id="apellidos" placeholder="Escuredo Dominguez">
+            </div>
+
+            <div class="col-md-5 offset-md-3">
+              <div *ngIf="nombre.invalid && nombre.touched">
+                <div *ngIf="nombre.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+              </div>
+              <label for="nick" class="col-form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nick" id="nick" placeholder="fernandito_kitkat">
+            </div>
+
+            <div class="col-md-5 offset-md-4">
+              <div class="form">
+                <div *ngIf="email.invalid && email.touched">
+                  <div *ngIf="email.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+                  <div *ngIf="password.errors?.email" class="d-block invalid-feedback">Correo no válido.</div>
+                </div>
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" formControlName="email" [class.is-invalid]="email.touched && email.invalid" class="form-control font1"/>
+              </div>
+            </div>
+
+            <div class="col-md-5 offset-md-3">
+              <label class="form-label" for="password">Contraseña</label>
+              <div *ngIf="password.invalid && password.touched">
+                <div *ngIf="password.errors?.required" class="d-block invalid-feedback">Campo obligatorio.</div>
+              </div>
+              <div class="input-group">
+                <input class="form-control" formControlName="password" [class.is-invalid]="password.touched && password.invalid" [type]="fieldTextType ? 'text' : 'password'" id="password"/>
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i [ngClass]="{'bi bi-eye': fieldTextType, 'bi bi-eye-slash': !fieldTextType}" (click)="verPassword()"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contenido-bloques">
+              <div class="col-3 btn-efecto-login">
+                <button type="submit">REGISTRARSE</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>
+

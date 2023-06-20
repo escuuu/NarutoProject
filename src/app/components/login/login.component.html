@@ -1,0 +1,37 @@
+<main id="contenido font" style="overflow: clip !important;">
+  <div class="contenido-centrado font" >
+    <div class="kate-explicacion font">
+      <section>
+        <a  href="#">
+          <img src="../../../assets/naruto.png" width="280px">
+        </a>
+
+        <form class="container font" (ngSubmit)="login()" [formGroup]="login_form">
+          <div class="row gy-2" >
+
+            <div class="col-md-5 offset-md-3">
+              <label for="email" class="col-form-label">Email</label>
+              <input type="email" class="form-control" formControlName="email" id="email" placeholder="nombre@ejemplo.com">
+            </div>
+
+            <div class="col-md-5 offset-md-4">
+              <label for="password" class="col-form-label">Constraseña</label>
+              <input type="password" formControlName="password" class="form-control" id="password">
+            </div>
+
+            <div class="contenido-bloques">
+              <div class="col-2 btn-efecto"><button type="submit">INICIAR SESIÓN</button>
+              </div>
+              <div class="col-2 btn-efecto"><button type="button" routerLink="/registro">REGISTRARSE</button>
+              </div>
+            </div>
+
+            <div class="contenido-bloques">
+              <button type="button" class="btn">¿Has olvidado tu contraseña?</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>

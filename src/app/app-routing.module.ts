@@ -7,6 +7,8 @@ import { VillasVerMasComponent } from './components/villas/villas-ver-mas/villas
 import { VillasComponent } from './components/villas/villas.component';
 import { WikiVerMasComponent } from './components/wiki/wiki-ver-mas/wiki-ver-mas.component';
 import { WikiComponent } from './components/wiki/wiki.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
   { path: 'inicio', component: PortadaComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'villas/:nombre', component: VillasVerMasComponent },
   { path: 'clanes', component: ClanesComponent },
   { path: 'clanes/:nombre', component: ClanesVerMasComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: '', redirectTo: '/inicio', pathMatch: 'full' }
 ];
 

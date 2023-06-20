@@ -10,3 +10,14 @@
 .g1 {
   margin: 8% 0;
 }
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titulo span {
+  margin-bottom: 4%;
+}

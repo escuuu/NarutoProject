@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg font">
-   <div class="container-fluid">
+<nav class="navbar navbar-expand-lg font" *ngIf="!token || token == null">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="../../../assets/naruto.png" width="170px">
     </a>
@@ -9,13 +9,46 @@
     <div class="collapse navbar-collapse text-light" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
         <li class="nav-item">
-          <div class="btn-efecto"><a routerLink="/wiki">PERSONAJES</a></div>
+          <div class="btn-efecto"><button routerLink="/wiki">PERSONAJES</button></div>
         </li>
         <li class="nav-item">
-          <div class="btn-efecto"><a routerLink="/villas">VILLAS</a></div>
+          <div class="btn-efecto"><button routerLink="/villas">VILLAS</button></div>
         </li>
         <li class="nav-item">
-          <div class="btn-efecto"><a routerLink="/clanes">CLANES</a></div>
+          <div class="btn-efecto"><button routerLink="/clanes">CLANES</button></div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-efecto-login"><button routerLink="/login">INICIAR SESIÓN</button></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg font" *ngIf="token || token != null">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/naruto.png" width="170px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-light" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0">
+        <li class="nav-item">
+          <div class="btn-efecto"><button routerLink="/wiki">PERSONAJES</button></div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-efecto"><button routerLink="/villas">VILLAS</button></div>
+        </li>
+        <li class="nav-item">
+          <div class="btn-efecto"><button routerLink="/clanes">CLANES</button></div>
+        </li>
+        <li class="nav-item dropdown-center">
+          <a class="btn-nav btn-outline-success dropdown-toggle nav-link" data-bs-toggle="dropdown"> <i class="bi bi-person-circle"></i> Usuario</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item btn-nav" (click)="eliminarSesion()"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+          </ul>
         </li>
       </ul>
     </div>
