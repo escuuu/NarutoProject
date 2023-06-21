@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/classes/user';
+import { User } from 'src/app/shared/entitys/user';
 
 @Component({
   selector: 'app-navbar',

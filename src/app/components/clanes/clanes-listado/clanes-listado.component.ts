@@ -16,7 +16,7 @@ export class ClanesListadoComponent {
       id_clan: 0,
       nombre: '',
       descripcion: '',
-      habilidades: '',
+      cualidad: '',
       imagen: ''
     }
   }

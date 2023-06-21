@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/shared/classes/user';
+import { User } from 'src/app/shared/entitys/user';
 import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
